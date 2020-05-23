@@ -1,0 +1,23 @@
+{
+    "extends": ["airbnb-base", "plugin:prettier/recommended"],
+    "env": {
+      "node": true,
+      "es6": true,
+      "jest/globals": true
+    },
+    "rules": {
+      "no-unused-vars": [
+        1,
+        {
+          "argsIgnorePattern": "root|args|context|ast|res|next|resolve|reject|^err"
+        }
+      ],
+      "arrow-body-style": [2, "as-needed"],
+      "import/prefer-default-export": 0,
+      "import/no-dynamic-require": "warn",
+      "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+      "max-len": "off"
+    },
+    "plugins": ["jest"]
+  }
+  

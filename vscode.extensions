@@ -1,0 +1,69 @@
+Name: Bracket Pair Colorizer
+Id: coenraads.bracket-pair-colorizer
+Description: A customizable extension for colorizing matching brackets
+Version: 1.0.61
+Publisher: CoenraadS
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer
+
+Name: change-case
+Id: wmaurer.change-case
+Description: Quickly change the case (camelCase, CONSTANT_CASE, snake_case, etc) of the current selection or current word
+Version: 1.0.0
+Publisher: wmaurer
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=wmaurer.change-case
+
+Name: ESLint
+Id: dbaeumer.vscode-eslint
+Description: Integrates ESLint JavaScript into VS Code.
+Version: 2.1.5
+Publisher: Dirk Baeumer
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+
+Name: Import Cost
+Id: wix.vscode-import-cost
+Description: Display import/require package size in the editor
+Version: 2.12.0
+Publisher: Wix
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost
+
+Name: Live Share
+Id: ms-vsliveshare.vsliveshare
+Description: Real-time collaborative development from the comfort of your favorite tools.
+Version: 1.0.2236
+Publisher: Microsoft
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare
+
+Name: npm Intellisense
+Id: christian-kohler.npm-intellisense
+Description: Visual Studio Code plugin that autocompletes npm modules in import statements
+Version: 1.3.0
+Publisher: Christian Kohler
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense
+
+Name: Prettier - Code formatter
+Id: esbenp.prettier-vscode
+Description: Code formatter using prettier
+Version: 4.7.0
+Publisher: Esben Petersen
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+
+Name: Toggle Quotes
+Id: britesnow.vscode-toggle-quotes
+Description: Toggle cycle " -> ' -> `
+Version: 0.3.2
+Publisher: BriteSnow
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=BriteSnow.vscode-toggle-quotes
+
+Name: Turbo Console Log
+Id: chakrounanas.turbo-console-log
+Description: Automating the process of writing meaningful log messages.
+Version: 1.4.0
+Publisher: ChakrounAnas
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log
+
+Name: Wallaby.js
+Id: wallabyjs.wallaby-vscode
+Description: Integrated Continuous Testing Tool for JavaScript.
+Version: 1.0.201
+Publisher: Wallaby.js
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=WallabyJs.wallaby-vscode
