@@ -2,7 +2,7 @@ const debug = require('debug');
 const fetch = require('node-fetch');
 const _ = require('lodash');
 
-const dlog = debug('blankenbot:commands:followers');
+const dlog = debug('bot:commands:followers');
 
 function followers(args) {
   let [userName] = args;
@@ -11,7 +11,7 @@ function followers(args) {
   if (_.isNil(userName) || _.isEmpty(userName)) userName = 'jeffblankenburg';
 
   const url = `https://api.crunchprank.net/twitch/followcount/${userName}`;
-  
+
   const options = {
     method: 'GET',
   };

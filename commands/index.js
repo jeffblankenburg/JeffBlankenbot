@@ -1,21 +1,11 @@
+const age = require('./age');
+const dice = require('./dice');
 const followers = require('./followers');
+const lamp = require('./lamp');
 
 module.exports = {
+  age,
+  dice,
   followers,
+  lamp,
 };
-
-// function commands(tmi) {
-//   const lamp = () => {
-//     dlog('lamp');
-//   };
-
-//   const rename = () => {
-//     dlog('rename');
-//   };
-
-//   const followers = () => {
-//     dlog('rename');
-//   };
-
-//   return { lamp, rename };
-// }

@@ -8,11 +8,10 @@ const tmi = require('tmi.js');
 const YoutubeMp3Downloader = require('youtube-mp3-downloader');
 
 const commands = require('./commands');
-const sfx = require('./sfx.js');
 const keys = require('./keys.js');
 const opts = require('./identity.js');
 
-const dlog = debug('blankenbot:index');
+const dlog = debug('bot:index');
 dlog('start');
 
 // Create a client with our options
@@ -56,8 +55,10 @@ async function onMessageHandler(target, context, msg, self) {
   dlog(`COMMAND NAME = ${commandName}`);
 
   switch (commandName) {
-    case '!lamp':
-      // call function ();
+    case '!age':
+      commands
+        .age(commandArgs)
+        .then((r) => client.say(target, `@${context.username} ${r}`));
       break;
 
     case '!followers':
@@ -66,24 +67,24 @@ async function onMessageHandler(target, context, msg, self) {
         .then((r) => client.say(target, `@${context.username} ${r}`));
       break;
 
+    case '!dice':
+      const diceMessage = commands.dice(commandArgs);
+
+      dlog('diceMessage %s', diceMessage);
+      client.say(target, `@${context.username} ${diceMessage}`);
+      break;
+
+    case '!lamp':
+      commands
+        .lamp(commandArgs)
+        .then((r) => client.say(target, `@${context.username} ${r}`));
+      break;
+
     default:
       break;
   }
-
-  if (commandName.toLowerCase().startsWith('!lamp ')) {
-    const color = commandName.replace('!lamp ', '');
-    dlog(`COLOR RECEIVED = ${color}`);
-    var response = await changeLampColor(color);
-    dlog(`RESPONSE RECEIVED = ${JSON.stringify(response)}`);
-    // TODO: WE REALLY SHOULD BE RESPONDING TO THE USER WITH A SUCCESS OR FAILURE.  FIX YOUR CALLBACKS.
-    client.say(target, `@${context.username} ${response}`);
-  } else if (commandName.toLowerCase().startsWith('!dice')) {
-    let sides = parseInt(commandName.replace('!dice', ''));
-    if (Number.isNaN(sides)) sides = 20;
-    let num = rollDice(sides);
-    if (sides !== 20) num += ` (${sides})`;
-    client.say(target, `@${context.username} You rolled ${num}`);
-  } else if (commandName.toLowerCase().startsWith('!miles')) {
+  dlog(`commandName %s`, commandName);
+  if (commandName.toLowerCase().startsWith('!miles')) {
     /*
     Strava.config({
       "access_token"  : keys.strava_access_token,
@@ -92,39 +93,6 @@ async function onMessageHandler(target, context, msg, self) {
     const payload = await Strava.athlete.get({id:45634});
     dlog("ATHLETE = " + JSON.stringify(payload));
     */
-  } else if (commandName.toLowerCase().startsWith('!age')) {
-    dlog('COMMAND = AGE');
-    // https://decapi.me/twitch/accountage/jeffblankenburg
-
-    let username = commandName.replace('!age', '').trim().replace('@', '');
-    if (username.length === 0) username = 'jeffblankenburg';
-
-    const decapiResponse = await httpsGet(
-      'decapi.me',
-      `/twitch/accountage/${username}`,
-    );
-
-    client.say(
-      target,
-      `@${context.username} @${username} has been on Twitch for ${decapiResponse}.`,
-    );
-  } else if (commandName.toLowerCase().startsWith('!followers')) {
-    let username = commandName
-      .replace('!followers', '')
-      .trim()
-      .replace('@', '');
-    if (username.length === 0) username = 'jeffblankenburg';
-
-    var response = await httpsGet(
-      'api.crunchprank.net',
-      `/twitch/followcount/${username}`,
-    );
-
-    client.say(
-      target,
-      `@${context.username} @${username} currently has ${response} followers.`,
-    );
-    dlog(`FOLLOWERS RESPONSE = ${JSON.stringify(response)}`);
   } else if (commandName.startsWith('!soundeffect')) {
     var params = commandName.replace('!soundeffect ', '').split(' ');
     // [CommandName, YouTubeId, StartTime, EndTime]
