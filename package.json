@@ -19,7 +19,7 @@
     "debug": "^4.1.1",
     "ffmpeg": "0.0.4",
     "https": "^1.0.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "node-fetch": "^2.6.0",
     "request-promise": "^4.2.5",
     "sound-play": "^1.0.5",
